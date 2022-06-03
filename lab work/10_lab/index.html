@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EXAMPLE </title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="Main.css" />
+  </head>
+  <body>
+
+    <div class="calculator">
+      <div class="result"><input type="text" readonly size="18" id="d" /></div>
+      <div class="key">
+        <p>
+          <button class="gray" onclick="displayNum(1)">1</button>
+          <button class="gray" onclick="displayNum(2)">2</button>
+          <button class="red" onClick='displayNum("+")'>+</button>
+        </p>
+        <p>
+          <button class="gray" onclick="displayNum(3)">3</button>
+          <button class="gray" onClick="displayNum(4)">4</button>
+          <button class="red" onclick='displayNum("-")'>-</button>
+        </p>
+        <button class="red" id="submit" onClick="displayResult()">=</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    function displayNum(x) {
+      console.log(x);
+      document.getElementById("d").value += x;
+    }
+    function displayResult() {
+      var text_to_eva = document.getElementById("d").value;
+      document.getElementById("d").value = eval(text_to_eva);
+    }
+  </script>
+</html>
